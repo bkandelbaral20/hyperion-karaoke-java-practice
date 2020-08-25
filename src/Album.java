@@ -32,6 +32,9 @@ public class Album {
 //    all songs for a given album
 
     public void printTrackListings(){
-        for
+        System.out.println("90S HITS track listing.....");
+//        for(int i =0; i<name.length; i++){
+//
+//        }
     }
 }
