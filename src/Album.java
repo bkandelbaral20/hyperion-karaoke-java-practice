@@ -1,7 +1,9 @@
 public class Album {
-//    a private string property for the album name
+
+    //    a private string property for the album name
 //    a private property for a list of song objects called songs
-    private String name, songs;
+    private String name;
+    private String songs;
 
 //    a constructor that sets both instance properties
 
@@ -31,10 +33,13 @@ public class Album {
 //    a public method with a void return type called printTrackListings that will iterate through
 //    all songs for a given album
 
+//    public static void main(String[] args) {
+//        printTrackListings();
+//    }
     public void printTrackListings(){
         System.out.println("90S HITS track listing.....");
-//        for(int i =0; i<name.length; i++){
-//
-//        }
+        for(int i =0; i < songs.length(); i++){
+            System.out.println(songs);
+        }
     }
 }

@@ -1,5 +1,4 @@
-
-import java.util.Arrays;
+import java.lang.reflect.Array;
 
 public class Song {
     //    private string properties for title, artist, and a private list of strings for lyrics
@@ -41,14 +40,9 @@ public class Song {
 
     //    a static method parseLyrics that takes in a single string input of possibly several words and returns a
 //    list of strings that are the output of splitting all the words in the input string on a single space character " "
-    public static void main(String[] args) {
-        parseLyrics("how are you ");
-    }
-    public static String parseLyrics(String input) {
+
+    public static String[] parseLyrics(String input) {
         String[] output = input.split("\\s+");
-
-        Arrays.stream(output).forEach(part -> System.out.println(part));
-
-        return input;
+        return output;
     }
 }
