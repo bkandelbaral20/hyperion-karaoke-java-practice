@@ -1,36 +1,38 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
 
 public class Album {
 
     //    a private string property for the album name
 //    a private property for a list of song objects called songs
-    private String name;
-    private String[] songs;
+    private String albumName;
+    private List<Song> songs;
 
     public Album(){};
 
 //    a constructor that sets both instance properties
 
-    public Album(String name, String[] songs) {
-        this.name = name;
+    public Album(String name, List<Song> songs) {
+        this.albumName = name;
         this.songs = songs;
     }
 
 //    getters and setters for both instance properties
 
     public String getName() {
-        return name;
+        return albumName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.albumName = name;
     }
 
-    public String[] getSongs() {
+    public List<Song>  getSongs() {
         return songs;
     }
 
-    public void setSongs(String[] songs) {
+    public void setSongs(List<Song>  songs) {
         this.songs = songs;
     }
 
@@ -38,18 +40,26 @@ public class Album {
 //    all songs for a given album
 
     public static void main(String[] args) {
-        String[] songs = {"Infinity", "Infinity 2", "Infinity 3"};
-        Album album = new Album("XX", songs);
-
+        Album a = new Album("90s Hits", Arrays.asList(
+           new Song("Every Day is a Winding Road", "Sheryl Crow", Song.parseLyrics("Everyday is a winding road ..." +
+                   " I get a little bit closer to feeling fine")),
+           new Song("Ready to Go", "Republica", Song.parseLyrics("I'm standing on the rooftops shouting out," +
+                   " Baby, I'm ready to go")),
+           new Song("Airbag", "Radiohead", Song.parseLyrics("In an interstellar burst I am back to save the universe"))
+        ));
         //calling method to run
-        album.printTrackListings(album);
+        a.printTrackListings();
     }
 
-    public void printTrackListings(Album album) {
-        System.out.println(name);
-        String[] trackList = album.getSongs();
-        for (String str : trackList) {
-            System.out.println( str);
+
+
+    public void printTrackListings() {
+        System.out.println(albumName + "track Listing ....");
+        int count = 1;
+        System.out.println();
+        for (Song str : songs) {
+            System.out.println(count + ". " + str.getTitle() + "by" + str.getArtist());
+            count++;
         }
     }
 }
